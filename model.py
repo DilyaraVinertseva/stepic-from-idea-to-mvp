@@ -120,7 +120,7 @@ def load_model_and_predict(df, path="model.pickle"):
     prediction = model.predict(df)
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)[1]
+    prediction_proba = model.predict_proba(df)[0][1]
     # prediction_proba = np.squeeze(prediction_proba)
 
     # encode_prediction_proba = {
