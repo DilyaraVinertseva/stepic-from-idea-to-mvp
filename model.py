@@ -120,11 +120,11 @@ def load_model_and_predict(df, path="model.pickle"):
     prediction = 'Клиент доволен' if model.predict(df) else 'Kлиент не доволен'
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)
+    prediction_proba = model.predict_proba(df)[:, 1]
     # prediction_proba = np.squeeze(prediction_proba)
     
     
-    return prediction, prediction_proba[1]
+    return prediction, prediction_proba
 
 if __name__ == "__main__":
     df = open_data()
