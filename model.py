@@ -5,8 +5,8 @@ from catboost import CatBoostClassifier
 from pickle import dump, load
 
 def open_data(path="clients.csv"):
-    df = pd.read_csv(path)
-    df = df.drop('id', axis=1)
+    df = pd.read_csv(path, index_col=0)
+    
     df.columns = [i.replace(' ', '_').lower() for i in df.columns]
 
     return df
