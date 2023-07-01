@@ -120,7 +120,7 @@ def load_model_and_predict(df, path="model.pickle"):
     prediction = model.predict(df)
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)[0][1]
+    # prediction_proba = model.predict_proba(df)[0][1]
     # prediction_proba = np.squeeze(prediction_proba)
 
     # encode_prediction_proba = {
@@ -140,7 +140,7 @@ def load_model_and_predict(df, path="model.pickle"):
     # prediction_df = pd.DataFrame(prediction_data, index=[0])
     # prediction = encode_prediction[prediction]
 
-    return encode_prediction[prediction], prediction_proba
+    return encode_prediction[prediction]
 
 if __name__ == "__main__":
     df = open_data()
