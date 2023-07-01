@@ -24,7 +24,7 @@ def split_data(df: pd.DataFrame):
 
 def preprocess_data(df: pd.DataFrame, test=True):
     #delete na
-    # df = df.drop('id', axes=1)
+    
     df = df.dropna()
 
     #encode gender
@@ -140,7 +140,7 @@ def load_model_and_predict(df, path="model.pickle"):
     # prediction_df = pd.DataFrame(prediction_data, index=[0])
     # prediction = encode_prediction[prediction]
 
-    return prediction
+    return 'Клиент доволен' if prediction else 'Kлиент не доволен'
 
 if __name__ == "__main__":
     df = open_data()
