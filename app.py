@@ -146,7 +146,7 @@ def sidebar_input_features():
         
     }
 
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(data, index=None)
 
     return df
 
