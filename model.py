@@ -135,7 +135,7 @@ def load_model_and_predict(df, path="model.pickle"):
 
     prediction_data = {}
     for key, value in encode_prediction_proba.items():
-        prediction_data.update({value: prediction_proba_0})
+        prediction_data.update({value: prediction_proba[key]})
 
     prediction_df = pd.DataFrame(prediction_data, index=[0])
     prediction = encode_prediction[prediction]
