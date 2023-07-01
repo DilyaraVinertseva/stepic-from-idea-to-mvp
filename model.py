@@ -118,7 +118,7 @@ def load_model_and_predict(df, path="model.pickle"):
     with open(path, "rb") as file:
         model = load(file)
 
-    prediction = 'Клиент доволен' if model.predict(df) else 'Kлиент не доволен'
+    prediction = 'Клиент скорее доволен' if model.predict(df) else 'Kлиент скорее не доволен'
     # prediction = np.squeeze(prediction)
 
     prediction_proba = model.predict_proba(df)[:, 1]
