@@ -112,8 +112,8 @@ def sidebar_input_features():
     
 
     translatetion = {
-        "Мужской": "male",
-        "Женский": "female",
+        "Мужской": "Male",
+        "Женский": "Female",
         "Лояльный": "Loyal Customer",
         "Нелояльный": "disloyal Customer",
         "Рабочая": "Business travel",
