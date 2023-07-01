@@ -24,7 +24,7 @@ def split_data(df: pd.DataFrame):
 
 def preprocess_data(df: pd.DataFrame, test=True):
     #delete na
-    df = df.drop('id', axes=1)
+    # df = df.drop('id', axes=1)
     df = df.dropna()
 
     #encode gender
