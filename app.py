@@ -52,7 +52,7 @@ def process_side_bar_inputs():
     full_X_df = pd.concat((user_input_df, train_X_df), axis=0)
     preprocessed_X_df = preprocess_data(full_X_df, test=False)
 
-    user_X_df = preprocessed_X_df[0]
+    user_X_df = preprocessed_X_df[:1]
     write_user_data(user_X_df)
 
     prediction = load_model_and_predict(user_X_df)
