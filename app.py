@@ -122,7 +122,7 @@ def sidebar_input_features():
 
     data = {
         "gender": translatetion[gender],
-        "Age": age,
+        "age": age,
         'customer_type': translatetion[customer_type],
         'type_of_travel': translatetion[type_of_travel], 
         'class': servclass,
