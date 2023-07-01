@@ -24,7 +24,7 @@ def split_data(df: pd.DataFrame):
 
 def preprocess_data(df: pd.DataFrame, test=True):
     #delete na
-    
+    df = df.drop('id', axes=1)
     df = df.dropna()
 
     #encode gender
@@ -120,27 +120,27 @@ def load_model_and_predict(df, path="model.pickle"):
     prediction = model.predict(df)
     # prediction = np.squeeze(prediction)
 
-    prediction_proba = model.predict_proba(df)
+    # prediction_proba = model.predict_proba(df)
     # prediction_proba = np.squeeze(prediction_proba)
 
-    encode_prediction_proba = {
-        0: "Клиент не доволен с вероятностью",
-        1: "Клиент доволен с вероятностью"
-    }
+    # encode_prediction_proba = {
+    #     0: "Клиент не доволен с вероятностью",
+    #     1: "Клиент доволен с вероятностью"
+    # }
 
     encode_prediction = {
         0: "Жаль, что клиент остался не доволен сервисом, будем работать!",
         1: "Ура! клиент ушел довольным, так держать!"
     }
 
-    prediction_data = {}
-    for key, value in encode_prediction_proba.items():
-        prediction_data.update({value: prediction_proba[key]})
+    # prediction_data = {}
+    # for key, value in encode_prediction_proba.items():
+    #     prediction_data.update({value: prediction_proba[key]})
 
-    prediction_df = pd.DataFrame(prediction_data, index=[0])
-    prediction = encode_prediction[prediction]
+    # prediction_df = pd.DataFrame(prediction_data, index=[0])
+    # prediction = encode_prediction[prediction]
 
-    return prediction, prediction_df
+    return encode_prediction[prediction]
 
 if __name__ == "__main__":
     df = open_data()
