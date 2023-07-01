@@ -117,7 +117,7 @@ def load_model_and_predict(df, path="model.pickle"):
     with open(path, "rb") as file:
         model = load(file)
 
-    prediction = model.predict(df)[0]
+    prediction = model.predict(df)
     # prediction = np.squeeze(prediction)
 
     # prediction_proba = model.predict_proba(df)[0][1]
