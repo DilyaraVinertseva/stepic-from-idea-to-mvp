@@ -117,30 +117,14 @@ def load_model_and_predict(df, path="model.pickle"):
     with open(path, "rb") as file:
         model = load(file)
 
-    prediction = model.predict(df)
+    prediction = 'Клиент доволен' if model.predict(df) else 'Kлиент не доволен'
     # prediction = np.squeeze(prediction)
 
-    # prediction_proba = model.predict_proba(df)[0][1]
+    prediction_proba = model.predict_proba(df)[1]
     # prediction_proba = np.squeeze(prediction_proba)
-
-    # encode_prediction_proba = {
-    #     0: "Клиент не доволен с вероятностью",
-    #     1: "Клиент доволен с вероятностью"
-    # }
-
-    encode_prediction = {
-        0: "Жаль, что клиент остался не доволен сервисом, будем работать!",
-        1: "Ура! клиент ушел довольным, так держать!"
-    }
-
-    # prediction_data = {}
-    # for key, value in encode_prediction_proba.items():
-    #     prediction_data.update({value: prediction_proba[key]})
-
-    # prediction_df = pd.DataFrame(prediction_data, index=[0])
-    # prediction = encode_prediction[prediction]
-
-    return 'Клиент доволен' if prediction else 'Kлиент не доволен'
+    
+    
+    return prediction, prediction_proba
 
 if __name__ == "__main__":
     df = open_data()
