@@ -140,7 +140,7 @@ def load_model_and_predict(df, path="model.pickle"):
     # prediction_df = pd.DataFrame(prediction_data, index=[0])
     # prediction = encode_prediction[prediction]
 
-    return encode_prediction[prediction]
+    return prediction
 
 if __name__ == "__main__":
     df = open_data()
