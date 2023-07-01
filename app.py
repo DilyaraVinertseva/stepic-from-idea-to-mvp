@@ -35,12 +35,12 @@ def write_user_data(df):
     st.write(df)
 
 
-def write_prediction(prediction, prediction_proba):
+def write_prediction(prediction):
     st.write("## Предсказание")
     st.write(prediction)
 
-    st.write("## Вероятность удовлетворенности")
-    st.write(prediction_proba)
+    # st.write("## Вероятность удовлетворенности")
+    # st.write(prediction_proba)
 
 
 def process_side_bar_inputs():
